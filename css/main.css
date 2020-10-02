@@ -11,27 +11,13 @@ header .button {
 header nav {
 }
 
-
-.sidebar {
-	width: 30%;
-	float: left;
-	font-size : 10pt;
-}
-
-
 .contents {
-	
-	width: 70%;
-	float: right;
 }
 
 footer{
-	clear: both;
 	width: 480px;
 	font-size : 10pt;
 }
-
-.
 
 div.first {
 	background-image: url("img/top_bg.jpg");

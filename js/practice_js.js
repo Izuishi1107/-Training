@@ -1,3 +1,5 @@
+'use strict';
+
 document.write("Hello World!");
 alert("Hello World!");
 
@@ -24,3 +26,9 @@ for ( let i = 0; i < 3; i++ ) {
 	if ( i % 2 != 0 ) continue; //←2で割り切れる時だけ処理を行わない。
 	console.log (fruitList[i]);
 }
+
+let ichi=1;
+if(ichi === 1){
+	console.log(`Xは${ichi}です`);
+}
+//==の使いどころがよくわからないな。。。
