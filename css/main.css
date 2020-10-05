@@ -1,0 +1,63 @@
+body{
+	margin: 0 auto;
+}
+
+header.first{
+}
+
+header .button {
+}
+
+header nav {
+}
+
+.contents {
+}
+
+footer{
+	width: 480px;
+	font-size : 10pt;
+}
+
+div.first {
+	background-image: url("img/top_bg.jpg");
+	padding:5px 0 7px 0;
+}
+
+.top {
+	margin:7px 3px;
+}
+
+div.first h1 {
+	margin:5px 3px;
+	font-size : 16pt;
+	color:#191970;
+}
+
+div.first p {
+	margin:5px 3px;
+	font-size : 10pt;
+}
+
+
+div.contents h2 {
+	color:#778899;
+	background-color:#f0f8ff;
+	font-size : 16pt;
+	font-weight: 700;
+}
+
+div.contents p {
+	font-size : 10pt;
+}
+
+div.box-menu {
+	width : 100px;
+	height : 100%;
+	background : white;
+	left : -100%;
+	transition : left .3s;
+}
+div.box-menu:hover {
+	left : 0;
+}
