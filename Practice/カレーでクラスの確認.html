@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--	<link rel="stylesheet" type="text/css" href="css/curry.css">-->
+	<title>カレー食べたい</title>
+</head>
+<body>
+	<script>
+		"use strict";
+		
+		const a=1;
+		const i=2;
+		const u=3;
+		const e=4;
+		
+		console.log(a+u+e+i);
+		
+		
+//		class Curry{
+//			constractor(meat,carrot,potato,onion){
+//				//材料
+//				this.meat = meat;
+//				this.carrot = carrot;
+//				this.potato = potato;
+//				this.onion = onion;
+//			}
+//			
+//			Cooking(){
+//				return this.meat + this.carrot + this.potato + this.onion;
+//			}
+//		}
+//		const Cook = new Curry(100,60,120,50);
+//		console.log("全部合わせた量は"+Cook.Cooking()+"グラムです。");
+		
+		
+		
+		class Calculator {
+				constructor(x, y) {
+				this.x = x;
+				this.y = y;
+				}
+			addTwoNum() {
+				return this.x + this.y;
+				}
+			}
+		const Calc = new Calculator(3, 4);
+		console.log(Calc.x);
+		console.log(Calc.y);
+		let num = Calc.addTwoNum;
+		console.log(num); //なぜか計算結果じゃなくて計算式が出力される。なんでだ？
+		console.log(Calc.x+Calc.y);
+		
+		
+		
+		
+		class superNaming  {
+			constructor() {
+				this.name = "田中";
+				}
+			outputName() {
+				return this.name;
+				}
+			}
+		class subGreeting extends superNaming {
+			outputName() {
+				return super.outputName() + "太郎";
+			}
+			outputHello() {
+				return "Hello!";
+			}
+		}
+		
+		const Greeting = new subGreeting;
+		console.log(Greeting.outputHello()+Greeting.outputName());
+		
+		
+		
+		//練習問題
+//		class Naming {
+//			constractor(?) {
+//				this.name = ["山田","田中","林",?]
+//			}
+//			result(?) {
+//				return ?
+//			}
+//		}
+//		const outputName = new Naming("佐藤");
+//		for(let i = 0; i < ?; i++) {
+//			console.log(?);
+//		}
+		
+		const array = ["リンゴ","ブドウ","メロン"];
+		console.log(array.length);
+
+		class Naming {
+			constractor(name) {
+				this.name = ["山田","田中","林",name];
+			}
+			result(i) {
+				return this.name[i];
+			}
+		}
+		const outputName = new Naming("佐藤");
+		for(let i = 0; i < outputName.name.length; i++) {
+			console.log(outputName.result(i));
+		}
+		
+		
+	</script>
+</body>
+</html>

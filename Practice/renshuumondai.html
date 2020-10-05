@@ -1,0 +1,27 @@
+<!DOCUTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta http-ewuiv="X-UA-Conpatible" content="ie=edge">
+		<title>あああ</title>
+	</head>
+	<body>
+		<script>
+			"use strict";
+			
+			class Naming {
+				constractor(name) {
+					this.name=["山田","田中","林",name];
+				}
+				result(i) {
+					return this.name[i];
+				}
+			}
+			const outputName = new Naming("佐藤");
+			for(let i=0; i < outputName.name.length; i++) {
+				console.log(outputName.result(i));
+			}
+		</script>
+	</body>
+</html>
