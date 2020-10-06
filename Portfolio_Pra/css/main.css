@@ -1,0 +1,68 @@
+html{
+}
+
+body{
+	display: -webkit-flex;
+	display: flex;
+	justify-content: flex-end;
+	position: absolute;
+	left: 0;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.area{
+	min-height: 100%;
+	box-sizing: border-box;
+	}
+
+#area1{
+		background-color:blue;
+		min-width: 300px;
+		transition: 0.4s;
+	}
+	
+@media screen and (min-width:480px){
+	#area1{
+		background-color:violet;
+		margin-left: 50px;
+		min-width: 300px;
+		
+		transition: 0.4s;
+	}	
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px){
+	#area1{
+		background-color:purple;
+		margin-left: 100px;
+		min-width: 300px;
+		
+		transition: 0.4s;
+	}	
+}
+
+@media screen and ( min-width:1024px){
+	#area1{
+		background-color:red;
+		margin-left: 300px;
+		min-width: 300px;
+		max-width: 400px;
+		
+		transition: 0.4s;
+	}	
+}
+
+#area2 {
+	background-color:pink;
+	width: 400px;
+	min-width: 400px;
+}
+
+#area3 {
+	background-image: url("../img/bg.jpg");	
+	/*夕映えの影のフリー素材 https://www.pakutaso.com/20150113022post-5086.html*/
+	background-size: cover;
+	background-position: 68%;
+	min-width: 450px;
+}

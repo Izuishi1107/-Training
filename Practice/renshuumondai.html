@@ -12,16 +12,19 @@
 			
 			class Naming {
 				constractor(name) {
-					this.name=["山田","田中","林",name];
+					this.name=['山田','田中','林',name];
 				}
-				result(i) {
+				Result(i) {
 					return this.name[i];
 				}
 			}
-			const outputName = new Naming("佐藤");
+			
+			const outputName = new Naming('佐藤');
 			for(let i=0; i < outputName.name.length; i++) {
-				console.log(outputName.result(i));
+				console.log(outputName.Result(i));
 			}
 		</script>
 	</body>
 </html>
+
+<!--outputName.name.length-->
