@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf=8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+		<title>HumburgerMenu2</title>
+		<style type="text/css">
+			#body{
+				padding:0;
+				margin:0;
+				font-family:Verdana,Geneva,Tahome,sans-serif;
+				overflow-x: hidden;
+			}
+			#main{
+				background-color:#eee;
+				width:100%;
+				height:100%;
+				position:absolute;
+				top:0;
+				left:0;
+				padding:8px;
+				z-index:1;
+				overflow:auto;
+			}
+			#cover {
+				background-color:#000;
+				opacity:.6;
+				width:100%;
+				height:100%;
+				position:absolute;
+				top:0;
+				left:0;
+				display:none;
+				z-index:2;
+				transition: 0.4s;
+			}
+			#menu {
+				background-color:#4c80ee;
+				color:#fff;
+				position:absolute;
+				top: 0;
+				left: -180px;
+				padding: 8px;
+				width: 180px;
+				min-height: 100%;
+				z-index: 3;
+				box-sizing:border-box;
+				transition: 0.4s;
+			}
+			#open,#close {
+				float:left;
+				cursor:pointer;
+			}
+			#cover.menu-open{
+				display:block;
+			}
+			#menu.menu-open {
+				left:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="menu">
+			<i class="fas fa-times" id="close"></i>
+			<ul>
+				<li>Menu1</li>
+				<li>Menu2</li>
+				<li>Menu3</li>
+				<li>Menu4</li>
+				<li>Menu5</li>
+			</ul>
+		</div>
+		
+		<div id="main">
+			<i class="fas fa-bars" id="open"></i>
+			<h1>Hello</h1>
+			<p>HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!</p>
+			<p>HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!</p>
+			<p>HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!</p>
+			<p>HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!</p>
+			<p>HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!</p>
+			<p>HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!HELLO!</p>
+		</div>
+		<div id="cover"></div>
+		<script>
+			'use strict';
+			const open = document.getElementById('open');
+			const close = document.getElementById('close');
+			
+			const menu = document.getElementById('menu');
+			const cover = document.getElementById('cover');
+		
+			open.addEventListener('click',()=>{
+				menu.className = 'menu-open';
+				cover.className = 'menu-open';
+//				if(menu.className === 'menu-open'){
+//					menu.className = '';
+//					cover.className = '';
+//				}else{
+//					menu.className = 'menu-open';
+//					cover.className = 'menu-open';
+//				}
+			});
+			
+			close.addEventListener('click',()=>{
+				menu.className = '';
+				cover.className = '';
+//				if(menu.className === ''){
+//					menu.className = 'menu-open';
+//					cover.className = 'menu-open';
+//				}else{
+//					menu.className = '';
+//					cover.className = '';
+//				}
+			});
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

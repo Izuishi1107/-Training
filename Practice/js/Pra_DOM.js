@@ -29,7 +29,7 @@ document.querySelector('.button5').addEventListener('click',()=>{
 	for(let i = 0;i < 5;i++){
 		const targetNode2 = document.getElementsByClassName('hello')[i];
 		
-		targetNode2.textContent = 'お疲れ様です。';
+		targetNode2.textContent = 'ぽぽぽぽーん！';
 		targetNode2.style.backgroundColor="skyblue";
 	}
 });
