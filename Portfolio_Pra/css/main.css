@@ -1,68 +1,51 @@
 html{
+	box-sizing: border-box;
+/*	margin-left: auto;
+	position: absolute;
+	right: 0;*/
+	width: 100vw;
+	height: 100vh;
 }
 
 body{
 	display: -webkit-flex;
 	display: flex;
 	justify-content: flex-end;
-	position: absolute;
-	left: 0;
-	height: 100%;
-	box-sizing: border-box;
+	padding: 0;
+	
 }
 
-.area{
-	min-height: 100%;
-	box-sizing: border-box;
-	}
+#area0{
+	background-color: cadetblue;
+	flex-grow:2;
+}
 
 #area1{
-		background-color:blue;
-		min-width: 300px;
-		transition: 0.4s;
-	}
-	
-@media screen and (min-width:480px){
-	#area1{
-		background-color:violet;
-		margin-left: 50px;
-		min-width: 300px;
-		
-		transition: 0.4s;
-	}	
-}
-
-@media screen and (min-width:768px) and ( max-width:1024px){
-	#area1{
-		background-color:purple;
-		margin-left: 100px;
-		min-width: 300px;
-		
-		transition: 0.4s;
-	}	
-}
-
-@media screen and ( min-width:1024px){
-	#area1{
-		background-color:red;
-		margin-left: 300px;
-		min-width: 300px;
-		max-width: 400px;
-		
-		transition: 0.4s;
-	}	
+	min-width: 180px;	
+	max-width: 300px;
+	background-color: tomato;
+	flex-grow:2;
 }
 
 #area2 {
+	min-width: 300px;
+	max-width: 400px;
 	background-color:pink;
-	width: 400px;
-	min-width: 400px;
+	flex-grow:1;
 }
-
+	
 #area3 {
 	background-image: url("../img/bg.jpg");	
-	/*夕映えの影のフリー素材 https://www.pakutaso.com/20150113022post-5086.html*/
+/*	夕映えの影のフリー素材 https://www.pakutaso.com/20150113022post-5086.html*/
 	background-size: cover;
 	background-position: 68%;
-	min-width: 450px;
+	flex-grow:3;
+}
+
+@media screen and (min-width:600px){
+	/*横幅600切ったらスマホ用画面にする。
+		フレックスボックスの並び順を3⇒1⇒0⇒2にする
+		横並びから盾並びにする
+		<h1>の場所をエリア1からエリア3に移動する
+	*/
 }
