@@ -65,7 +65,7 @@ h3{
 	flex-grow:3;
 }
 
-@media screen and (max-width:670px){
+@media screen and (max-width:700px){
 	/*横幅600切ったらスマホ用画面にする。
 		フレックスボックスの並び順を3⇒1⇒0⇒2にする
 		横並びから盾並びにする
