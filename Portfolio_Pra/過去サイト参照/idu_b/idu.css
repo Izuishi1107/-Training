@@ -1,0 +1,1664 @@
+@charset "UTF-8";
+body {
+	background: #42413C;
+	padding: 0;
+	color: #000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	line-height: 1.4;
+	float: none;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+/* ~~ エレメント / タグセレクター ~~ */
+ul, ol, dl { /* ブラウザー間の相違により、リストの余白とマージンをゼロにすることをお勧めします。一貫性を保つために、量をここで指定するか、リストに含まれるリスト項目 (LI、DT、DD) で指定できます。より詳細なセレクターを記述しない限り、ここで指定する内容が .nav リストにも適用されることに注意してください。 */
+	padding: 0;
+	list-style-type: none;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	font-family: "小塚ゴシック Pro R";
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+}
+h1, h2, h3, h4, h5, h6, p {
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size: 12px;
+	color: #000;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+a img { /* このセレクターは、一部のブラウザーでイメージをリンクで囲んだ場合にイメージの周囲に表示される初期設定の青いボーダーを削除します。 */
+	border: none;
+	float: left;
+}
+
+/* ~~ サイトのリンクのスタイル付けは、ホバー効果を作成するセレクターグループも含め、この順序にする必要があります。~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* 非常に特殊な表示方法でリンクをスタイル付けする場合を除き、一目で見分けられるように下線を指定することをお勧めします。 */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* このセレクターグループは、キーボードを使用するユーザーに対し、マウスを使用するユーザーと同じホバー効果を提供します。 */
+	text-decoration: none;
+}
+
+/* ~~ この固定幅コンテナが他の div を囲みます。~~ */
+.container {
+	width: 960px;
+	background: #FFF;
+	margin: 0 auto; /* 幅に加え、両側を自動値とすることで、レイアウトが中央に揃います。 */
+}
+
+/* ~~ ヘッダーには幅は指定されません。ヘッダーはレイアウトの幅全体まで広がります。ヘッダーには、ユーザー独自のリンクされたロゴに置き換えられるイメージプレースホルダーが含まれます。~~ */
+.header {
+	list-style-type: none;
+	background-image: url(../idu_picture/backgroundcolor.jpg);
+	background-repeat: repeat-x;
+	background-color: #EDEDED;
+	height: 163px;
+}
+
+/* ~~ レイアウトに使用するカラムです。~~ 
+
+1) 余白は、div の上部または下部にのみ配置されます。これらの div 内のエレメントには、それ自体に余白があるので、ボックスモデル計算を行う必要がありません。ただし、div 自体に両側の余白やボーダーを指定した場合、その値が加算されたものが合計幅になることに注意してください。div 内のエレメントの余白を削除し、さらにその div 内に、全体のデザインに必要な幅や余白を指定していない 2 つ目の div を追加することもできます。
+
+2) カラムはすべてフロートしているため、マージンは指定されていません。マージンを追加する必要がある場合は、フロート方向には指定しないでください (例えば、右フロートに設定した div の右マージン)。多くの場合、代わりに余白を使用できます。このルールに従わない場合は、div のルールに「display:inline」宣言を追加し、一部のバージョンの Internet Explorer でマージンが 2 倍になるバグを回避する必要があります。
+
+3) クラスはドキュメント内で複数回使用できるので (またエレメントには複数のクラスを適用できます)、カラムには ID ではなくクラス名が割り当てられます。例えば、必要に応じて 2 つのサイドバー div をスタックできます。クラスを各ドキュメントで一度しか使用しないのであれば、ユーザーの好みに応じて、クラス名を ID に変更することができます。
+
+4) ナビゲーションを左ではなく右に配置したい場合、これらのカラムを反対方向にフロートさせると (すべて左方向にする代わりに、すべて右方向に設定)、反転してレンダリングされます。HTML ソース内で div を移動する必要はありません。
+
+*/
+.sidebar1 {
+	float: left;
+	width: 212px;
+	padding-bottom: 0px;
+	margin-left: 20px;
+	margin-top: 0px;
+	padding-left: 0px;
+}
+.content {
+	width: 690px;
+	float: left;
+	padding-top: 0px;
+	padding-right: 0;
+	padding-bottom: 0px;
+	padding-left: 0;
+	margin-left: 18px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* ~~ このセレクターグループは、.content 内のリストに領域間隔を指定します。~~ */
+.content ul, .content ol {
+	list-style-type: none;
+	padding-top: 0;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	font-family: "小塚ゴシック Pro R";
+}
+
+/* ~~ ナビゲーションリストのスタイル付け (Spry などの事前作成済みのフライアウトメニューを使用する場合は削除できます) ~~ */
+ul.nav {
+	list-style: none; /* リンク用の上部のボーダーを作成します。他のすべてのものは LI 上で下部のボーダーを使用して配置されます。 */
+	margin-bottom: 15px; /* 下のコンテンツのナビゲーション間の間隔を作成します。 */
+	height: 50px;
+	width: 210px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	border-top-width: 0px;
+	border-top-style: none;
+	border-top-color: #666;
+}
+ul.nav li {
+	margin-bottom: 10px;
+	margin-left: 20px;
+	border-bottom-width: 1px;
+	border-bottom-style: none;
+	border-bottom-color: #666;
+	font-family: "小塚ゴシック Pro R";
+	font-size: 12px;
+	padding-top: 19px;
+}
+ul.nav a, ul.nav a:visited { /* これらのセレクターをグループ化することで、リンクのボタン表示が訪問後も確実に保持されます。 */
+	padding: 5px 5px 5px 15px;
+	display: block; /* リンクにブロックプロパティを指定し、リンクが含まれる LI 全体がリンクになるようにします。これにより、領域全体がマウスのクリックに反応するようになります。 */
+	width: 160px;  /*この幅により、IE6 でボタン全体をクリックできるようになります。IE6 をサポートする必要がない場合は削除できます。適切な幅を計算するには、サイドバーコンテナの幅からそのリンクの余白を減算します。 */
+	text-decoration: none;
+	background: #C6D580;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* マウスを使用する場合もキーボードを使用する場合も、背景色とテキストカラーを変更します。 */
+	background: #ADB96E;
+	color: #FFF;
+}
+
+/* ~~ フッター ~~ */
+.footer {
+	background: #CCC49F;
+	position: relative;/* IE6 に、適切にクリアするための hasLayout を指定します。 */
+	clear: both; /* この clear プロパティにより .container は、カラムの範囲がどこまでかを認識してその範囲を含めるようになります。 */
+	background-color: #FFFFFF;
+	padding-top: 0px;
+	padding-right: 0;
+	padding-bottom: 0px;
+	padding-left: 0;
+}
+
+/* ~~ その他の float/clear クラス ~~ */
+.fltrt {  /* このクラスを使用すると、ページ内でエレメントを右にフローティングさせることができます。フローティングさせるエレメントは、ページ内で横に並べて表示するエレメントの前に指定する必要があります。 */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* このクラスを使用すると、ページ内でエレメントを左にフローティングさせることができます。フローティングさせるエレメントは、ページ内で横に並べて表示するエレメントの前に指定する必要があります。 */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* このクラスは、#footer が #container から削除されているか取り出されている場合に、<br /> または空の div で、フローティングさせる最後の div に続く最後のエレメントとして (#container 内に) 配置できます。 */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.header_left {
+	float: left;
+	width: 338px;
+	padding-top: 1px;
+	padding-left: 20px;
+	padding-bottom: 7px;
+}
+.header_right {
+	width: 602px;
+	float: left;
+	height: 80px;
+}
+.header_right_top {
+	height: 20px;
+	padding-left: 286px;
+	padding-right: 0px;
+}
+.header_right_top_bottun {
+	float: left;
+	font-family: "小塚ゴシック Pro R";
+	font-size: 12px;
+	color: #666;
+	width: auto;
+	margin-right: 0px;
+	margin-left: 27px;
+}
+.header_right_bottom_bottun {
+	float: left;
+	font-family: "小塚ゴシック Pro R";
+	font-size: 12px;
+	color: #000000;
+	margin-left: 8px;
+}
+.header_right_bottom {
+}
+.header_right_bottom {
+	height: 34px;
+	width: 550px;
+	margin-left: 44px;
+	margin-top: 24px;
+}
+.header_bottom {
+	height: 58px;
+	width: 960px;
+}
+.header_middle {
+	height: 88px;
+	width: 960px;
+	background-image: url(../idu_picture/backgroundcolor.jpg);
+	background-repeat: repeat-x;
+}
+.header_grobalnabigation_wide {
+	height: 58px;
+	width: 163px;
+	float: left;
+}
+.header_grobalnabigation_thrim {
+	float: left;
+	height: 58px;
+	width: 159px;
+}
+.header_grobalnabigation_wide2 {
+	height: 58px;
+	width: 161px;
+	float: left;
+	clear: none;
+}
+.footer_top {
+	height: 511px;
+	width: 960px;
+}
+.footer_top_small_bottan {
+	font-family: "小塚ゴシック Pro R";
+	font-size: 12px;
+	color: #000;
+	float: none;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 7px;
+	list-style-type: none;
+	word-spacing: 10em;
+	text-indent: 0px;
+	line-height: 180%;
+}
+.fotter_top_small_bottun {
+	font-family: "小塚ゴシック Pro R";
+	font-size: 12px;
+	color: #000;
+}
+.footer_top_bottun_154 {
+	float: left;
+	width: 154px;
+}
+.footer_bottom {
+	height: 57px;
+	width: 960px;
+	background-image: url(../idu_picture/f_backgroundcolor.jpg);
+	background-repeat: repeat-x;
+}
+.footer_bottom_left {
+	float: left;
+	height: 57px;
+	width: 390px;
+}
+.footer_bottom_right {
+	float: left;
+	height: 57px;
+	width: 570px;
+}
+.footer_bottom_left_addless {
+	font-family: "小塚ゴシック Pro R";
+	font-size: 12px;
+	color: #666;
+	width: 390px;
+}
+.footer_bottom_right_bottun {
+	font-family: "小塚ゴシック Pro R";
+	font-size: 12px;
+	color: #666;
+	float: left;
+	margin-left: 20px;
+}
+.footer_bottom_right_copyright {
+	font-family: "小塚ゴシック Pro R";
+	font-size: 12px;
+	color: #666;
+	clear: both;
+	margin-top: 0px;
+	padding-top: 10px;
+	padding-left: 176px;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+}
+.footer_bottom_right_top {
+	width: 376px;
+	height: 12px;
+	padding-left: 194px;
+	margin-top: 8px;
+}
+.content_day {
+	font-family: "小塚ゴシック Pro R";
+	font-size: 16px;
+	color: #666;
+	height: 20px;
+	width: 150px;
+	border: 1px none #666;
+	font-weight: normal;
+}
+.content_h1_jp {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 12px;
+	color: #666;
+	float: left;
+	width: auto;
+	margin-left: 22px;
+	height: auto;
+	margin-top: 7px;
+}
+.conten_pichup_textl {
+	font-family: "小塚ゴシック Pro M", osaka;
+	font-size: 16px;
+	color: #333333;
+	text-decoration: underline;
+	font-weight: normal;
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+}
+.content_h1_english {
+	font-family: "小塚ゴシック Pr6N M";
+	font-size: 10px;
+	float: left;
+	width: auto;
+	padding: 0px;
+	margin-top: 8px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 12px;
+}
+.footer_top_bottun_all {
+	width: 927px;
+	margin-left: 30px;
+}
+.footer_top_bottun_155 {
+	float: left;
+	width: 155px;
+}
+.header_content_h1 {
+}
+.content_h1 {
+	height: 30px;
+	background-image: url(../idu_picture/top_h1_background.jpg);
+	background-repeat: no-repeat;
+	clear: both;
+	width: 690px;
+	padding: 0px;
+	margin-top: 30px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.content_pickup {
+	height: 215px;
+	margin-left: 5px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	clear: both;
+}
+.content_pickup_box {
+	float: left;
+	width: 212px;
+	margin-right: 0px;
+}
+.content_news_box {
+	width: auto;
+	height: 50px;
+}
+.content_news_box_day {
+	float: left;
+	border: 1px solid #666;
+	font-family: "小塚ゴシック Pro R", "メイリオ";
+	font-size: 13px;
+	color: #666;
+	clear: none;
+	margin-left: 5px;
+	margin-bottom: 0px;
+	padding-right: 3px;
+	padding-left: 5px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: lighter;
+	font-variant: normal;
+	margin-top: 0px;
+	margin-right: 0px;
+	padding-top: 4px;
+	padding-bottom: 0px;
+	height: 20px;
+	width: 75px;
+	text-align: left;
+}
+.content_news_box_text {
+	float: left;
+	font-family: "小塚ゴシック Pro R";
+	font-size: 14px;
+	margin-left: 20px;
+	width: 580px;
+	margin-bottom: 8px;
+	clear: none;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	padding: 0px;
+	margin-top: 2px;
+	margin-right: 0px;
+}
+.footer_top_big_bottan {
+	margin-left: 7px;
+	font-family: "小塚ゴシック Pro B";
+	font-size: 16px;
+	color: #666666;
+	margin-top: 16px;
+	float: none;
+	font-weight: normal;
+}
+.footer_top_backgroundcolor {
+	background-image: url(../idu_picture/f_background_image.jpg);
+	height: 490px;
+	width: 960px;
+	background-repeat: repeat;
+}
+.footer_top_bar {
+	width: 960px;
+	height: 39px;
+	background-image: url(../idu_picture/backgroundcolorpattan.jpg);
+	background-repeat: repeat-y;
+}
+.footer_top_bar_picture {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+}
+.footer_top_bar_bar {
+	float: left;
+	margin-top: 35px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.content_sidecolor {
+	background-color: #666;
+	float: left;
+	width: 10px;
+}
+.content_backgroundocolor {
+	background-color: #FFF;
+	background-image: url(../idu_picture/backgroundcolorpattan.jpg);
+	background-repeat: repeat-y;
+	height: 1120px;
+}
+.content_sidebarcolor {
+	background-color: #666;
+	float: left;
+	width: 10px;
+}
+.sidebar1_background {
+	background-image: none;
+	background-repeat: no-repeat;
+	height: 53px;
+	width: 212px;
+	margin-bottom: 7px;
+}
+.content_event_box {
+	height: 45px;
+}
+.content_event_box_day {
+	font-family: "小塚ゴシック Pro R";
+	font-size: 13px;
+	border: 1px solid #666;
+	color: #666;
+	float: left;
+	margin-left: 5px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	padding-top: 4px;
+	padding-bottom: 0px;
+	padding-left: 3px;
+	clear: none;
+	width: 75px;
+	height: 20px;
+	padding-right: 3px;
+	text-align: center;
+}
+.content_event_box_text {
+	font-family: "小塚ゴシック Pro R";
+	font-size: 14px;
+	float: left;
+	text-decoration: underline;
+	margin-left: 20px;
+	width: 580px;
+	margin-bottom: 8px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	padding: 0px;
+	margin-top: 2px;
+	margin-right: 0px;
+}
+.content_top_biggest_photo {
+	margin-top: 17px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+.header_top_right {
+	height: 30px;
+	width: 120px;
+}
+.header_right_top_kakoi {
+	height: 30px;
+	width: 606px;
+}
+.content_pickup_box2 {
+	float: left;
+	width: 212px;
+	margin-left: 23px;
+}
+.footer_bottom_left_logo {
+	margin-left: 20px;
+	margin-top: 5px;
+}
+.header_right_bottom_search {
+	float: left;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 8px;
+}
+.footer_bottom_right_copyright_text {
+	letter-spacing: 0.0555em;
+	margin: 0px;
+	padding: 0px;
+}
+.content_box {
+	margin-top: 20px;
+	padding: 0px;
+	clear: both;
+	float: none;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	width: 690px;
+	height: 160px;
+}
+.footer_top_bar_bar2 {
+	float: left;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.footer_top_bar_kakoi {
+	height: 39px;
+	width: 809px;
+	float: left;
+}
+.footer_top_bar_kakoi_text {
+	font-family: "小塚ゴシック Pro R", osaka;
+	font-size: 12px;
+	color: #666;
+	padding-left: 707px;
+	padding-top: 19px;
+}
+.content_event_box_text_color {
+	color: #d7226d;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	font-family: "小塚ゴシック Pro R", osaka;
+	font-size: 14px;
+}
+.test {
+	color: #d7226d;
+}
+.content_news_ichiran {
+	height: auto;
+	width: auto;
+	font-family: "小塚ゴシック Pr6N M", osaka;
+	font-size: 10px;
+	float: left;
+	margin-top: 7px;
+	margin-left: 433px;
+}
+.RSS {
+	height: 18px;
+	width: 39px;
+	float: left;
+	margin-top: 6px;
+	margin-left: 523px;
+}
+.content_h1_bar {
+	float: left;
+	height: 24px;
+	width: 1px;
+	margin-left: 9px;
+	margin-top: 3px;
+}
+.RSS1 {
+	height: 18px;
+	width: 39px;
+	margin-top: 6px;
+	margin-left: 10px;
+	float: left;
+}
+.contens_sidebar_grobalnavigationname {
+	margin: 0px;
+	padding: 0px;
+	height: 51px;
+	width: 212px;
+}
+.contents_sidebar_bottun {
+	height: 49px;
+	width: 212px;
+}
+.content_pankuzu {
+	font-family: "小塚ゴシック Pro R", osaka;
+	font-size: 14px;
+	margin-top: 7px;
+	margin-left: 50px;
+	margin-bottom: 30px;
+}
+.content_second_h1 {
+	background-image: url(../idu_picture/1-0_h1.jpg);
+	background-repeat: no-repeat;
+	height: 60px;
+	clear: none;
+	float: none;
+	width: 662px;
+	margin-top: 0px;
+	padding-top: 20px;
+	padding-left: 28px;
+	font-size: 28px;
+	font-family: "小塚ゴシック Pro M", osaka;
+	color: #666666;
+	margin-bottom: 30px;
+}
+.content_h2_background_1 {
+	background-image: url(../idu_picture/1-0_h2_background.jpg);
+	background-repeat: no-repeat;
+	clear: both;
+	height: 30px;
+	width: 690px;
+}
+.content_box_second {
+	margin-top: 25px;
+	width: 690px;
+	padding: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	height: 205px;
+	float: none;
+	clear: none;
+}
+.picture_1_0 {
+	float: left;
+	border: 1px solid #666;
+	margin-left: 20px;
+	padding: 1px;
+	clear: none;
+}
+.content_second_text_1_0_1 {
+	font-family: "小塚ゴシック Pro R", osaka;
+	font-size: 14px;
+	padding: 0px;
+	float: left;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 13px;
+	width: 444px;
+	height: auto;
+}
+.content_second_1_0_box {
+	padding: 0px;
+	float: left;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+	margin-left: 14px;
+	height: 162px;
+	width: 440px;
+}
+.content_second_text_test {
+	font-size: 14px;
+}
+.content_second_linkbottun {
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 12px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+	float: left;
+}
+.content_second_linkbottun_box {
+	clear: both;
+	padding-top: 80px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin: 0px;
+}
+.content_second_linkbottun_haji {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+}
+.content_backgroundcolor_1_0 {
+	background-image: url(../idu_picture/backgroundcolorpattan.jpg);
+	background-repeat: repeat-y;
+	margin: 0px;
+	padding: 0px;
+	height: 1236px;
+}
+.content_box_second_1_0_1 {
+	padding: 0px;
+	clear: none;
+	float: none;
+	height: 163px;
+	width: auto;
+	margin-top: 25px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.content_third_h1 {
+	clear: none;
+	float: none;
+	height: 140px;
+	width: 690px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+	margin-left: 0px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding: 0px;
+	background-image: url(../idu_picture/1/bg02.jpg);
+	background-repeat: no-repeat;
+}
+.content_box_second_1_1_1 {
+	padding: 0px;
+	margin-top: 25px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	float: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.content_third_h1_midasi {
+	color: #c40d23;
+	font-size: 14px;
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	height: 15px;
+	width: auto;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 26px;
+	padding-top: 11px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.content_third_h1_midasi_1_1 {
+	font-family: "小塚ゴシック Pro R";
+}
+.content_third_h1_midasi_1_1_b {
+	font-size: 28px;
+	font-family: "小塚ゴシック Pro R", "メイリオ";
+	padding: 0px;
+	height: 27px;
+	width: auto;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 26px;
+	color: #666666;
+}
+.content_third_h1_midasi_text {
+	font-size: 16px;
+	color: #666666;
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	padding: 0px;
+	margin-top: 16px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 26px;
+	height: 50px;
+	width: auto;
+}
+.content_box_third_text_1_1 {
+	font-family: "小塚ゴシック Pro R";
+	font-size: 14px;
+	padding: 0px;
+	height: auto;
+	width: 442px;
+	float: left;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 19px;
+}
+.content_box_third_picture_1_1 {
+	padding: 0px;
+	float: left;
+	height: 208px;
+	width: 207px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 22px;
+}
+.content_second_h1_2_0 {
+	font-family: "小塚ゴシック Pro M", "Koduka Gothic Pro M", "メイリオ", meiryo;
+	font-size: 28px;
+	color: #666666;
+	background-image: url(../idu_picture/2/b02.jpg);
+	height: 60px;
+	width: 662px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+	margin-left: 0px;
+	padding-top: 20px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	background-repeat: no-repeat;
+}
+.content_h2_background_2 {
+	background-image: url(../idu_picture/2/b03.jpg);
+	background-repeat: no-repeat;
+	clear: both;
+	height: 30px;
+	width: 690px;
+}
+content_second_linkbottun_box_2 {
+	padding: 0px;
+	clear: both;
+	margin-top: 30px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.content_second_h1_3_0 {
+	font-family: "小塚ゴシック Pro M", "Koduka Gothic Pro M", "メイリオ", meiryo;
+	font-size: 28px;
+	color: #666666;
+	background-image: url(../idu_picture/3/b01.jpg);
+	background-repeat: no-repeat;
+	height: 60px;
+	width: 662px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+	margin-left: 0px;
+	padding-top: 20px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+}
+.content_font_color_3 {
+	color: #88157b;
+}
+.content_font_color_4 {
+	color: #98a223;
+}
+.content_second_h1_4_0 {
+	font-family: "小塚ゴシック Pro M", "Koduka Gothic Pro M", "メイリオ", meiryo;
+	font-size: 28px;
+	color: #666666;
+	background-image: url(../idu_picture/4/b01.jpg);
+	background-repeat: no-repeat;
+	height: 60px;
+	width: 662px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+	margin-left: 0px;
+	padding-top: 20px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+}
+.content_second_4_0_box {
+	font-size: 14px;
+	font-family: "小塚ゴシック Pro R", "Koduka Gothic Pro R", "メイリオ", meiryo;
+	color: #404040;
+}
+.content_second_h1_6_0 {
+	font-family: "小塚ゴシック Pro M", "Koduka Gothic Pro M", "メイリオ", meiryo;
+	font-size: 28px;
+	color: #666666;
+	background-image: url(../idu_picture/b01.jpg);
+	height: 60px;
+	width: 662px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+	margin-left: 0px;
+	padding-top: 20px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+}
+.content_font_color_6 {
+	color: #d7226d;
+}
+.centent_h2_6_0 {
+	background-image: url(../idu_picture/b03.jpg);
+	padding: 0px;
+	clear: both;
+	height: 30px;
+	width: 690px;
+	margin-top: 30px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.content_font_color_6 {
+	color: #d7226d;
+}
+.content_third_h1_midasi_text_small {
+	font-family: "小塚ゴシック Pro R", "メイリオ";
+	font-size: 14px;
+	color: #666666;
+}
+.content_box_second_1_2_0_text {
+	font-family: "小塚ゴシック Pro R", "メイリオ";
+	font-size: 14px;
+	color: #404040;
+	height: auto;
+	width: 650px;
+	padding-top: 0px;
+	padding-right: 20px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+	margin-left: 0px;
+}
+.content_small_linkbottun_box {
+	padding: 0px;
+	height: auto;
+	width: 222px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.content_small_linkbottun {
+	padding: 0px;
+	height: 33px;
+	width: 222px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 17px;
+	margin-left: 0px;
+}
+.content_font_color_1 {
+	color: #c40d23;
+}
+.content_text_1_2_1 {
+	font-family: "小塚ゴシック Pro R", "メイリオ";
+	font-size: 14px;
+	color: #404040;
+	height: auto;
+	width: 650px;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	border-top-width: 1px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #666666;
+	border-right-color: #666666;
+	border-bottom-color: #666666;
+	border-left-color: #666666;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.content_text_1_2_1_2 {
+	font-family: "小塚ゴシック Pro R", "メイリオ";
+	font-size: 14px;
+	color: #404040;
+	height: auto;
+	width: 650px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #666666;
+	border-right-color: #666666;
+	border-bottom-color: #666666;
+	border-left-color: #666666;
+}
+content_third_zu_1_3 {
+	background-image: url(../idu_picture/1_3_zu_background.jpg);
+	background-repeat: repeat;
+	margin: 0px;
+	padding: 0px;
+	height: 543px;
+	width: 690px;
+}
+.content_zu_1_3 {
+	background-image: url(../idu_picture/1_3_zu_background.jpg);
+	background-repeat: no-repeat;
+	padding: 0px;
+	height: 543px;
+	width: 690px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.content_zu_age_1_3_1 {
+	font-family: "小塚ゴシック Pro R", "メイリオ";
+	font-size: 14px;
+	height: 14px;
+	width: 50px;
+	margin-top: 46px;
+	margin-right: 0px;
+	margin-bottom: 47px;
+	margin-left: 59px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	clear: none;
+	float: none;
+}
+.content_zu_1_4_3 {
+	padding: 0px;
+	height: auto;
+	width: 690px;
+	margin-top: 35px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.content_second_h1_2_1 {
+	background-image: url(../idu_picture/2/b004.jpg);
+	background-repeat: no-repeat;
+	height: 140px;
+	width: 690px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.content_font_color_2 {
+	color: #1e96d4;
+}
+.content_third_h1_midasi_2 {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 14px;
+	color: #1e96d4;
+	height: 15px;
+	width: auto;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 26px;
+	padding-top: 11px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.content_h2_background_2 {
+	background-image: url(../idu_picture/2/b03.jpg);
+	background-repeat: no-repeat;
+	margin: 0px;
+	padding: 0px;
+	height: 30px;
+	width: 690px;
+}
+.content_second_h1_5 {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 28px;
+	color: #666666;
+	height: 60px;
+	width: 662px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+	margin-left: 0px;
+	padding-top: 20px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 28px;
+	background-image: url(../idu_picture/5/b01.jpg);
+}
+.content_h2_bachkground_5 {
+	background-image: url(../idu_picture/5/b03.jpg);
+	clear: both;
+	height: 30px;
+	width: 690px;
+}
+.content_second_h1_5 {
+	background-image: url(../idu_picture/5/b02.jpg);
+	background-repeat: no-repeat;
+	padding: 0px;
+	height: 140px;
+	width: 690px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+	margin-left: 0px;
+}
+.content_second_h1_5_0 {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 28px;
+	color: #666666;
+	background-image: url(../idu_picture/5/b01.jpg);
+	height: 60px;
+	width: 662px;
+	margin-bottom: 30px;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+.content_third_h1_midasi_5 {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 14px;
+	color: #f39700;
+	height: 15px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 26px;
+	padding-top: 11px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.content_box_2_2_0_a {
+	height: 348px;
+	width: 690px;
+	margin-top: 25px;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.content_box_2_2_0_b {
+	padding: 0px;
+	height: 348px;
+	width: 690px;
+	margin-top: 25px;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+}
+.content_box_2_2_0_c {
+	padding: 0px;
+	height: 348px;
+	width: 690px;
+	margin-top: 25px;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+}
+.content_box_2_2_0_d {
+	padding: 0px;
+	height: 348px;
+	width: 690px;
+	margin-top: 25px;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+}
+.content_2_2_0_e {
+	margin: 0px;
+	padding: 0px;
+	height: auto;
+	width: 690px;
+}
+.content_text_2_2_0 {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 14px;
+	color: #666666;
+}
+.content_box_picture_2_2_0 {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	height: auto;
+	width: 456px;
+}
+.content_caption_2_2_0 {
+	padding: 0px;
+	float: left;
+	height: 40px;
+	width: 210px;
+	margin-top: 308px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 24px;
+}
+.content_text_2_3_0 {
+	height: auto;
+	width: 340px;
+	margin-top: 15px;
+	margin-right: 0px;
+	margin-bottom: 25px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+}
+.content_return_2_3 {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+	height: 20px;
+	width: auto;
+}
+.content_box_2_3_0 {
+	padding: 0px;
+	height: 160px;
+	width: 690px;
+	margin-top: 25px;
+	margin-right: 0px;
+	margin-bottom: 25px;
+	margin-left: 0px;
+}
+.content_picture_2_3_1 {
+	padding: 0px;
+	float: left;
+	height: auto;
+	width: auto;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+}
+.content_box_text_2_3_1 {
+	padding: 0px;
+	float: left;
+	height: 160px;
+	width: auto;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 60px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.content_name_2_3_1 {
+	font-family: "小塚ゴシック Pro R", "メイリオ";
+	font-size: 18px;
+	color: #404040;
+}
+.content_job_2_3_1 {
+	font-family: "小塚ゴシック Pro R", "メイリオ";
+	font-size: 14px;
+	color: #404040;
+}
+.content_address_2_3_1 {
+	font-family: "小塚ゴシック Pro R", "メイリオ";
+	font-size: 12px;
+	color: #404040;
+}
+.content_text_2_3_0_b {
+	height: auto;
+	width: 650px;
+	padding-top: 0px;
+	padding-right: 20px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.content_text_midasi_2_3_1 {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 14px;
+	color: #404040;
+	padding: 0px;
+	height: auto;
+	width: 650px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #666666;
+	margin-top: 15px;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+}
+.content_picture_2_4 {
+	height: auto;
+	width: auto;
+	margin-top: 20px;
+}
+.content_third_h1_6 {
+	margin: 0px;
+	padding: 0px;
+	height: 140px;
+	background-image: url(../idu_picture/6/b02.jpg);
+	background-repeat: no-repeat;
+	width: 690px;
+}
+.content_3_h1_box {
+	background-image: url(../../../../html%E9%96%A2%E4%BF%82/idu_1_index/b02.jpg);
+	background-repeat: no-repeat;
+	padding: 0px;
+	height: 140px;
+	width: 690px;
+	margin-bottom: 30px;
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+}
+.content_3_h1_box_colortext {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	height: 15px;
+	width: auto;
+	margin-left: 26px;
+	padding-top: 11px;
+	font-size: 14px;
+	color: #88157b;
+}
+.main_text {
+	font-family: "小塚ゴシック Pro R", "メイリオ";
+	font-size: 14px;
+	color: #404040;
+	height: auto;
+	width: auto;
+	margin-bottom: 0px;
+}
+.content_h2_box {
+	background-image: url(../../../../html%E9%96%A2%E4%BF%82/idu_1_index/b03.jpg);
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 690px;
+	margin-top: 30px;
+	clear: left;
+}
+.content_image_top20 {
+	height: auto;
+	width: auto;
+	margin-top: 20px;
+}
+.main_image_3_2_1_1 {
+	height: auto;
+	width: auto;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+.content_3_2_1_li {
+	width: 70px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+	float: left;
+	clear: right;
+	font-family: "小塚ゴシック Pro R", "メイリオ";
+	font-size: 12px;
+	color: #404040;
+	text-indent: 15px;
+}
+.content_image_right80 {
+	float: left;
+	height: auto;
+	width: 220px;
+	margin-right: 80px;
+}
+.content_image_top30 {
+	margin-top: 30px;
+}
+.content_image_top25 {
+	margin-top: 25px;
+}
+.content_text_top20_left15_floatL {
+	float: left;
+	margin-top: 20px;
+	margin-left: 15px;
+}
+.content_image_top20_left20_floatL {
+	float: left;
+	margin-top: 20px;
+	margin-left: 20px;
+	clear: none;
+	margin-bottom: 30px;
+}
+.content_image_left140 {
+	margin-left: 140px;
+}
+.content_image_left58 {
+	margin-left: 58px;
+}
+.content_image_left20 {
+	margin-left: 20px;
+}
+.content_image_top10 {
+	margin-top: 10px;
+}
+.content_4_h1_box {
+	background-image: url(../idu_picture/4/b02.jpg);
+	background-repeat: no-repeat;
+	height: 140px;
+	width: 690px;
+	margin-bottom: 30px;
+}
+.content_4_h1_box_colortext {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 14px;
+	color: #98a223;
+	height: 15px;
+	margin-left: 26px;
+	padding-top: 11px;
+}
+.margin_image_left18 {
+	margin-left: 18px;
+}
+.content_4_h2_box {
+	background-image: url(../idu_picture/4/b03.jpg);
+	background-repeat: no-repeat;
+	clear: left;
+	height: 30px;
+	width: 690px;
+}
+.content_image_top20_left20_right20 {
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.content_image_top20_left20 {
+	margin-top: 20px;
+	margin-left: 20px;
+	clear: none;
+	float: none;
+}
+.content_wide250_box {
+	width: 250px;
+}
+.content_top20_left20_right20_wide100 {
+	width: 438px;
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+	float: left;
+}
+.content_image_top20_left20_bottom20 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	clear: none;
+}
+.content_image_top20_left20_right20_floatL {
+	float: left;
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-left: 20px;
+	margin-bottom: 140px;
+}
+.content_image_top20_left20_right20_bottom20 {
+	margin: 20px;
+}
+.content_ide_200 {
+	float: left;
+	width: 200px;
+}
+.content_image_top12 {
+	margin-top: 12px;
+}
+.content_sidebar_bottun_bottom {
+	height: 52px;
+	width: 212px;
+}
+.content_image_wide220_floatL {
+	float: left;
+	width: 220px;
+}
+.content_image_left20_right20_floatL {
+	float: left;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.text_colorRed_big {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 18px;
+	color: #d7226d;
+}
+.text_corlorRed {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 14px;
+	color: #d7226d;
+}
+.main_text_small {
+	font-family: "小塚ゴシック Pro R", "メイリオ";
+	font-size: 12px;
+	color: #404040;
+}
+.content_image_bottom30 {
+	margin-bottom: 30px;
+}
+.content_third_h1_midashi_6 {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 14px;
+	color: #d7226d;
+	height: 15px;
+	margin-left: 26px;
+	padding-top: 11px;
+}
+.centent_h2_nocolorline {
+	background-image: url(../idu_picture/3_01.jpg);
+	clear: both;
+	height: 30px;
+	width: 690px;
+	margin-top: 30px;
+}
+.content_image_top17 {
+	margin-top: 17px;
+}
+.text_Red_bigger {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 24px;
+	color: #d7226d;
+}
+.text_blue {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 14px;
+	color: #269ad5;
+}
+.content_image_top50 {
+	margin-top: 50px;
+}
+.content_left20_right20_wide50_floatL {
+	float: left;
+	width: 380px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.content_third_h1_O {
+	background-image: url(../idu_picture/other/b02.jpg);
+	background-repeat: no-repeat;
+	height: 140px;
+	width: 690px;
+}
+.content_image_top35 {
+	margin-top: 25px;
+}
+.content_h2_O {
+	background-image: url(../idu_picture/other/b03.jpg);
+	background-repeat: no-repeat;
+	clear: both;
+	height: 30px;
+	width: 690px;
+	margin-top: 30px;
+}
+.content_image_bottom25 {
+	margin-bottom: 25px;
+}
+.content_third_h1_O_small {
+	background-image: url(../idu_picture/other/b01.jpg);
+	background-repeat: no-repeat;
+	height: 80px;
+	width: 690px;
+}
+.content_news_ichiran_350 {
+	font-family: "小塚ゴシック Pro M", "メイリオ";
+	font-size: 10px;
+	float: left;
+	margin-top: 7px;
+	margin-left: 350px;
+}
+.content_second_linkbottun_O {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	clear: none;
+}
+.content_second_linkbottun_O_top {
+	float: left;
+	margin-top: 30px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
+.content_second_linkbottun_haji_top {
+	float: left;
+	margin-top: 30px;
+	clear: none;
+}
+.content_image_top140_left20_bottom20 {
+	margin-top: 140px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+.content_h1_top {
+	background-image: url(../idu_picture/0/b02.jpg);
+	background-repeat: no-repeat;
+	clear: both;
+	height: 30px;
+	width: 690px;
+}
